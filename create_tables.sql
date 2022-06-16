@@ -1,11 +1,12 @@
 -- create table for users
 create table users (
-    id int not null,                -- id of user
-    user_name varchar(20),          -- name of user
-    user_password_hash varchar(64), -- hash of user password
+    id int not null auto_increment, -- id of user
+    user_name varchar(20),          -- name of user (has to be unique)
+    user_password_hash varchar(64), -- hash of user password (sha3-512)
 
-    -- primary key
-    primary key(id)
+    -- primary keys
+    primary key(id),
+    unique(user_name)
 );
 
 
@@ -13,7 +14,7 @@ create table users (
 
 -- create table for payments
 create table payments (
-    id int not null,                        -- id of payment
+    id int not null auto_increment,         -- id of payment
     user_id int not null,                   -- id of user, who is owner of payment
     payment_date date not null,             -- date of payment
     payment_time time not null,             -- time of payment
