@@ -2,7 +2,7 @@
 create table users (
     id int not null auto_increment, -- id of user
     user_name varchar(20),          -- name of user (has to be unique)
-    user_password_hash varchar(64), -- hash of user password (sha3-512)
+    user_password_hash varchar(129),-- hash of user password
 
     -- primary keys
     primary key(id),
