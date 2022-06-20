@@ -28,5 +28,5 @@ create table payments (
 
     -- primary key, foreign key
     primary key(id),                        
-    foreign key(user_id) references users(id)
+    foreign key(user_id) references users(id) on delete cascade
 );
